@@ -1,0 +1,3 @@
+voornaam;achternaam;username;SecurityGroep;OU
+Test;Gebruiker1;1287922;Studenten;OU=P3_Keuzedelen,OU=2022-2023,OU=Examenmoment,OU=ICT Examens,DC=ict-examen,DC=dc
+yvar;Peters;139623;ict;
