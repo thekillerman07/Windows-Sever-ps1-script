@@ -1,0 +1,9 @@
+Hide C drive in My Computer: User Configuration > Administrative Templates > File Explorer
+Deny all removable storage access: Computer Configuration > Administrative Templates > System
+Block command prompt: User Configuration > Administrative Templates > System
+Block registry editing tools: User Configuration > Administrative Templates > System
+Block Control Panel and PC settings: User Configuration > Administrative Templates > Control Panel
+Password policies:  Computer Configuration > Windows Settings > Security Settings
+Deny DVD read and write access: 	Computer Configuration > Administrative Templates > System
+Block Win+R: Administrative Templates > Start Menu and Taskbar > Remove Run menu from Start Menu | User Configuration > Administrative Templates > Start Menu and Taskbar
+Set Desktop Wallpaper: User Configuration > Administrative Templates > Desktop > Desktop
