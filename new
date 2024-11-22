@@ -1,0 +1,165 @@
+1. Gebruikers loggen bij een verkeerde username of wachtwoord
+
+Stap 1: Configureer de GPO
+
+1. Open Group Policy Management (gpedit.msc).
+
+
+2. Maak een nieuwe GPO of bewerk een bestaande die op de doelgroepen wordt toegepast.
+
+
+3. Ga naar:
+
+Computer Configuration > Policies > Windows Settings > Security Settings > Advanced Audit Policy Configuration > Audit Policies > Logon/Logoff
+
+
+4. Dubbelklik op Audit Logon.
+
+
+5. Vink Failure aan en klik op OK.
+
+
+6. Sluit de editor en forceer het beleid:
+
+gpupdate /force
+
+
+
+Stap 2: Verifieer de logging
+
+1. Open Event Viewer:
+
+Start > Event Viewer
+
+
+2. Ga naar:
+
+Windows Logs > Security
+
+
+3. Zoek naar events met ID 4625, die mislukte inlogpogingen aangeven.
+
+
+
+
+---
+
+2. Audit Account Management configureren voor alleen Failure logs
+
+1. Open Group Policy Management en bewerk dezelfde of een nieuwe GPO.
+
+
+2. Ga naar:
+
+Computer Configuration > Policies > Windows Settings > Security Settings > Advanced Audit Policy Configuration > Audit Policies > Account Management
+
+
+3. Dubbelklik op elk van de volgende opties en vink alleen Failure aan:
+
+Audit User Account Management
+
+Audit Security Group Management
+
+Audit Computer Account Management
+
+
+
+4. Sluit de editor en forceer het beleid:
+
+gpupdate /force
+
+
+
+Verifieer Audit Account Management
+
+1. Open Event Viewer:
+
+Start > Event Viewer
+
+
+2. Ga naar:
+
+Windows Logs > Security
+
+
+3. Zoek naar events zoals ID 4725 (geblokkeerde accounts) of ID 4738 (wijzigingen in accounts).
+
+
+
+
+---
+
+3. Analyseer logfiles met Event Viewer
+
+1. Open Event Viewer.
+
+
+2. Gebruik het Filter Current Log-optie om relevante events te vinden:
+
+Ga naar Windows Logs > Security.
+
+Klik op Filter Current Log... in het rechterpaneel.
+
+Vul specifieke Event IDs in, zoals:
+
+4625 (mislukte inlogpoging)
+
+4725, 4738 (accountbeheer).
+
+
+
+
+3. Analyseer de details door een event te selecteren en naar het General- en Details-tabblad te kijken.
+
+
+
+
+---
+
+4. Monitoren met Resource Monitor
+
+1. Open Resource Monitor:
+
+Start > Type "Resource Monitor" > Enter
+
+
+2. Monitor de volgende onderdelen:
+
+CPU:
+
+Controleer processen die veel CPU gebruiken.
+
+
+Disk:
+
+Bekijk de schijfactiviteit per bestand of proces.
+
+
+Network:
+
+Controleer netwerkactiviteit en TCP-verbindingen.
+
+
+Memory:
+
+Bekijk geheugengebruik en toegewezen pagina’s.
+
+
+
+
+3. Voor live monitoring:
+
+Klik op de tabbladen bovenaan (bijvoorbeeld CPU, Disk, etc.) om live gebruik te observeren.
+
+
+
+
+
+---
+
+Extra: Automatisering van logs
+
+Je kunt een script of tool zoals PowerShell of Log Analytics gebruiken om logs doorlopend te analyseren of naar een SIEM-oplossing (bijv. Splunk) te sturen.
+
+Als je verdere hulp nodig hebt, laat het me weten!
+
