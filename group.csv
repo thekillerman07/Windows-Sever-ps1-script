@@ -1,0 +1,8 @@
+Name;GroupScope;GroupCategory;OU
+group_cursussen2;Global;Security;OU=Cursussen,OU=Medewerkers,DC=examen139623,DC=com
+group_cur_coaching2;Global;Security;OU=coaching,OU=Cursussen,OU=Medewerkers,DC=examen139623,DC=com
+group_cur_psychologie2;Global;Security;OU=psychologie,OU=Cursussen,OU=Medewerkers,DC=examen139623,DC=com
+group_cur_taal2;Global;Security;OU=taal,OU=Cursussen,OU=Medewerkers,DC=examen139623,DC=com
+group_in-verkoop2;Global;Security;OU=in- en verkoop,OU=Medewerkers,DC=examen139623,DC=com
+group_management2;Global;Security;OU=Management,OU=Medewerkers,DC=examen139623,DC=com
+group_marketing2;Global;Security;OU=Marketing,OU=Medewerkers,DC=examen139623,DC=com
