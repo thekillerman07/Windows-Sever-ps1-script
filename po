@@ -1,0 +1,197 @@
+Hier zijn de query’s aangepast voor een Access-database. In Access gebruik je een iets andere syntaxis, maar het principe blijft hetzelfde:
+
+
+---
+
+a. Alle boeken die van uitgeverij Brinkman komen
+
+1. Open de query-ontwerper in Access.
+
+
+2. Voeg de tabel Boeken toe.
+
+
+3. Sleep de kolommen die je wilt zien naar de ontwerprij (bijvoorbeeld Titel, Uitgeverij).
+
+
+4. Stel in de kolom Uitgeverij de criteria in:
+
+"Brinkman"
+
+
+5. Voer de query uit.
+
+
+
+SQL-weergave:
+
+SELECT * 
+FROM Boeken 
+WHERE Uitgeverij = "Brinkman";
+
+
+---
+
+b. Alle boeken met het BoekID boven de 3500 en uit het jaar 2021
+
+1. Open de query-ontwerper.
+
+
+2. Voeg de tabel Boeken toe.
+
+
+3. Sleep de kolommen die je nodig hebt naar de ontwerprij.
+
+
+4. Voeg in de kolom BoekID de criteria in:
+
+>3500
+
+
+5. Voeg in de kolom Jaar de criteria in:
+
+2021
+
+
+6. Voer de query uit.
+
+
+
+SQL-weergave:
+
+SELECT * 
+FROM Boeken 
+WHERE BoekID > 3500 AND Jaar = 2021;
+
+
+---
+
+c. Alle boeken waar de naam van de auteur begint met "Rob"
+
+1. Voeg de tabel Boeken en eventueel een gekoppelde tabel Auteurs toe.
+
+
+2. Stel in de kolom AuteurNaam de criteria in:
+
+Like "Rob*"
+
+
+3. Voer de query uit.
+
+
+
+SQL-weergave:
+
+SELECT * 
+FROM Auteurs 
+WHERE AuteurNaam LIKE "Rob*";
+
+
+---
+
+d. Waar de functie 'docent' is en op locatie 'Emmen' werkzaam is
+
+1. Voeg de tabel Medewerkers toe.
+
+
+2. Stel de criteria in voor de kolommen:
+
+Functie:
+
+"Docent"
+
+Locatie:
+
+"Emmen"
+
+
+
+3. Voer de query uit.
+
+
+
+SQL-weergave:
+
+SELECT * 
+FROM Medewerkers 
+WHERE Functie = "Docent" AND Locatie = "Emmen";
+
+
+---
+
+e. Alle studenten met locatie 'Emmen' of 'Assen' en opleiding 'IT Systems and Devices'
+
+1. Voeg de tabel Studenten toe.
+
+
+2. Stel de criteria in voor de kolommen:
+
+Locatie:
+
+"Emmen" OR "Assen"
+
+Opleiding:
+
+"IT Systems and Devices"
+
+
+
+3. Voer de query uit.
+
+
+
+SQL-weergave:
+
+SELECT * 
+FROM Studenten 
+WHERE (Locatie = "Emmen" OR Locatie = "Assen") AND Opleiding = "IT Systems and Devices";
+
+
+---
+
+f. Alle boeken met het jaartal van 2019 of lager en verwijder ze
+
+1. Selecteer de boeken:
+
+Voeg de tabel Boeken toe.
+
+Stel de criteria in voor de kolom Jaar:
+
+<=2019
+
+Voer de query uit.
+
+
+
+
+SQL-weergave:
+
+SELECT * 
+FROM Boeken 
+WHERE Jaar <= 2019;
+
+2. Verwijder deze boeken:
+
+Maak een nieuwe query.
+
+Kies de optie Verwijderen.
+
+Voeg de tabel Boeken toe.
+
+Stel de criteria in voor de kolom Jaar:
+
+<=2019
+
+Voer de query uit.
+
+
+
+
+SQL-weergave:
+
+DELETE * 
+FROM Boeken 
+WHERE Jaar <= 2019;
+
+Let op: Maak altijd een back-up van je database voordat je verwijderacties uitvoert!
+
