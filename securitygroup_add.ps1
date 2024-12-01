@@ -20,28 +20,3 @@ foreach ($group in $groups) {
 
         
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-New-ADGroup -Name "group_administratie2" -GroupScope Global -GroupCategory Security -Path "OU=Administratie,OU=Medewerkers,DC=examen139623,DC=com"
